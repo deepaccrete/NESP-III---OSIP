@@ -95,10 +95,11 @@
 
 <body class="bg-surface font-body-md text-on-surface antialiased">
     <!-- TopNavBar from COMPONENTS_5 -->
-   <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-[74px]">
-                <div class="flex items-center gap-10"><a href="../homepage.html"><img alt="Logo" class="h-5 w-auto" src="Text.png"></a>
+                <div class="flex items-center gap-10"><a href="../homepage.html"><img alt="Logo" class="h-5 w-auto"
+                            src="Text.png"></a>
                     <ul class="hidden lg:flex items-center">
                         <li><a href="Sector.html"
                                 class="relative px-5 py-7 text-[13px] font-bold uppercase tracking-[0.12em] transition-all text-[#047857]">SECTORS</a>
@@ -321,7 +322,8 @@
                     <div class="relative grid grid-cols-3 gap-3 mb-8">
                         <div class="bg-white/5 border border-white/10 p-4 text-center">
                             <p class="font-h4 text-h4 text-white leading-none">$12.4B+</p>
-                            <p class="text-[10px] uppercase tracking-wider text-on-primary-container mt-2">Investment</p>
+                            <p class="text-[10px] uppercase tracking-wider text-on-primary-container mt-2">Investment
+                            </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 p-4 text-center">
                             <p class="font-h4 text-h4 text-white leading-none">140+</p>
@@ -448,7 +450,7 @@
         </div>
         <div
             class="max-w-[1440px] mx-auto border-t border-white/10 pt-5 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-            <span class="text-xs sm:text-sm">© 2024 OSIP Nigeria. All rights reserved.</span><span
+            <span class="text-xs sm:text-sm">© 2026 OSIP Nigeria. All rights reserved.</span><span
                 class="text-xs sm:text-sm">Designed for Nigeria Federal Ministry of Power.</span>
         </div>
     </footer>
@@ -463,14 +465,14 @@
 
     <!-- Shared nav: mobile toggle + active-page wiring -->
     <script>
-        (function () {
-            const navToggle = document.getElementById('mobile-nav-toggle');
-            const mobileNav = document.getElementById('mobile-nav');
-            if (navToggle && mobileNav) {
-                navToggle.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
-                window.addEventListener('resize', () => { if (window.matchMedia('(min-width: 1024px)').matches) mobileNav.classList.add('hidden'); });
-            }
-        })();
+            (function () {
+                const navToggle = document.getElementById('mobile-nav-toggle');
+                const mobileNav = document.getElementById('mobile-nav');
+                if (navToggle && mobileNav) {
+                    navToggle.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+                    window.addEventListener('resize', () => { if (window.matchMedia('(min-width: 1024px)').matches) mobileNav.classList.add('hidden'); });
+                }
+            })();
         (function () {
             const NAV_HREF = { 'SECTORS': 'Sector.html', 'OPPORTUNITIES': 'Opportunities.html', 'REGULATIONS': 'Regulation.html', 'DATA': 'Data.html', 'NEWS': 'News.html', 'CONTACT': 'Contact.html' };
             const PAGE_ACTIVE = { 'sector.html': 'SECTORS', 'detailedsector.html': 'SECTORS', 'regulation.html': 'REGULATIONS', 'data.html': 'DATA', 'news.html': 'NEWS', 'newsindetail.html': 'NEWS', 'opportunities.html': 'OPPORTUNITIES', 'opportunitiesnew.html': 'OPPORTUNITIES', 'detailedoppnew.html': 'OPPORTUNITIES' };
@@ -491,60 +493,160 @@
     </script>
     <!-- NESP nav hover dropdowns (shared, injected) -->
     <style>
-        .nesp-has-menu { position: relative; }
+        .nesp-has-menu {
+            position: relative;
+        }
+
         .nesp-dropdown {
-            position: absolute; top: 100%; left: 50%; min-width: 300px;
-            background: #ffffff; border: 1px solid #e7e7e7;
-            border-radius: 12px; box-shadow: 0 18px 40px -16px rgba(6, 20, 16, 0.22); margin-top: 8px;
-            padding: 10px; opacity: 0; visibility: hidden; transform: translateX(-50%) translateY(8px);
-            transition: opacity .22s ease, transform .22s ease, visibility .22s ease; z-index: 60;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            min-width: 300px;
+            background: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 12px;
+            box-shadow: 0 18px 40px -16px rgba(6, 20, 16, 0.22);
+            margin-top: 8px;
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(8px);
+            transition: opacity .22s ease, transform .22s ease, visibility .22s ease;
+            z-index: 60;
         }
-        .nesp-has-menu:hover .nesp-dropdown, .nesp-dropdown:hover {
-            opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+
+        .nesp-has-menu:hover .nesp-dropdown,
+        .nesp-dropdown:hover {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
         }
-        .nesp-dropdown::before { content: ""; position: absolute; top: -12px; left: 0; right: 0; height: 14px; }
-        .nesp-dropdown::after { content: ""; position: absolute; top: -7px; left: 50%; width: 13px; height: 13px; background: #ffffff; border-top: 1px solid #e7e7e7; border-left: 1px solid #e7e7e7; border-radius: 3px 0 0 0; transform: translateX(-50%) rotate(45deg); }
-        .nesp-menu-head { font-family: Manrope, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #9aa39e; padding: 8px 12px 6px; }
-        .nesp-menu-item { display: block; padding: 10px 12px; border-radius: 8px; text-decoration: none; transition: background .15s ease; }
-        .nesp-menu-item:hover { background: #f1f8f4; }
-        .nesp-menu-item .t { display: block; font-family: Manrope, sans-serif; font-size: 13.5px; font-weight: 700; color: #15241d; }
-        .nesp-menu-item:hover .t { color: #047857; }
-        .nesp-menu-item .d { display: block; font-size: 11.5px; line-height: 1.45; color: #6b746f; margin-top: 2px; }
-        .nesp-has-menu > a::after { content: ""; display: inline-block; width: 6px; height: 6px; margin-left: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); opacity: .6; vertical-align: middle; transition: transform .2s ease; }
-        .nesp-has-menu:hover > a::after { transform: translateY(0) rotate(225deg); }
+
+        .nesp-dropdown::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 0;
+            right: 0;
+            height: 14px;
+        }
+
+        .nesp-dropdown::after {
+            content: "";
+            position: absolute;
+            top: -7px;
+            left: 50%;
+            width: 13px;
+            height: 13px;
+            background: #ffffff;
+            border-top: 1px solid #e7e7e7;
+            border-left: 1px solid #e7e7e7;
+            border-radius: 3px 0 0 0;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        .nesp-menu-head {
+            font-family: Manrope, sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: #9aa39e;
+            padding: 8px 12px 6px;
+        }
+
+        .nesp-menu-item {
+            display: block;
+            padding: 10px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background .15s ease;
+        }
+
+        .nesp-menu-item:hover {
+            background: #f1f8f4;
+        }
+
+        .nesp-menu-item .t {
+            display: block;
+            font-family: Manrope, sans-serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #15241d;
+        }
+
+        .nesp-menu-item:hover .t {
+            color: #047857;
+        }
+
+        .nesp-menu-item .d {
+            display: block;
+            font-size: 11.5px;
+            line-height: 1.45;
+            color: #6b746f;
+            margin-top: 2px;
+        }
+
+        .nesp-has-menu>a::after {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            margin-left: 7px;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: translateY(-2px) rotate(45deg);
+            opacity: .6;
+            vertical-align: middle;
+            transition: transform .2s ease;
+        }
+
+        .nesp-has-menu:hover>a::after {
+            transform: translateY(0) rotate(225deg);
+        }
     </style>
     <script>
         (function () {
             var MENU = {
-                'SECTORS': { head: 'Strategic Priority Sectors', items: [
-                    { t: 'Renewable Generation', d: 'Large-scale solar, wind & geothermal projects.', href: 'DetailedSector.html' },
-                    { t: 'Grid Infrastructure', d: 'High-voltage transmission & smart-grid upgrades.', href: 'DetailedSector.html' },
-                    { t: 'Energy Storage', d: 'BESS & pumped-hydro to balance supply.', href: 'DetailedSector.html' }
-                ]},
-                'OPPORTUNITIES': { head: 'Investment Opportunities', items: [
-                    { t: 'Renewable Generation', d: 'Solar, wind & off-grid investment projects.', href: 'Opportunities.html' },
-                    { t: 'Grid Infrastructure', d: 'Transmission & distribution tenders.', href: 'Opportunities.html' },
-                    { t: 'Energy Storage', d: 'Battery & storage deployment projects.', href: 'Opportunities.html' },
-                    { t: 'Browse all opportunities', d: 'View every open opportunity.', href: 'Opportunities.html' }
-                ]},
-                'REGULATIONS': { head: 'Regulations & Compliance', items: [
-                    { t: 'Legislation & Acts', d: 'Electricity Act, PIA & core energy laws.', href: 'Regulation.html' },
-                    { t: 'Technical Guidelines', d: 'Licensing & mini-grid rules.', href: 'Regulation.html' },
-                    { t: 'Tax & Fiscal Policy', d: 'Incentives & pioneer status.', href: 'Regulation.html' },
-                    { t: 'Regulatory Bodies', d: 'NERC, REA, NIPC & more.', href: 'Regulation.html' }
-                ]},
-                'DATA': { head: 'Data & Insights', items: [
-                    { t: 'Investment & Capacity', d: 'Live metrics across energy sectors.', href: 'Data.html' },
-                    { t: 'State-wise Performance', d: 'Project, capacity & growth by state.', href: 'Data.html' },
-                    { t: 'Open Data Downloads', d: 'CSV, XLSX & API datasets.', href: 'Data.html' }
-                ]},
-                'NEWS': { head: 'News Categories', items: [
-                    { t: 'Policy & Legislation', d: 'Regulatory and policy developments.', href: 'News.html' },
-                    { t: 'Power & Energy', d: 'Generation, supply & market news.', href: 'News.html' },
-                    { t: 'Renewables', d: 'Solar, wind & clean-energy coverage.', href: 'News.html' },
-                    { t: 'Oil & Gas', d: 'Upstream and downstream updates.', href: 'News.html' },
-                    { t: 'Infrastructure', d: 'Projects, grids & facilities.', href: 'News.html' }
-                ]}
+                'SECTORS': {
+                    head: 'Strategic Priority Sectors', items: [
+                        { t: 'Renewable Generation', d: 'Large-scale solar, wind & geothermal projects.', href: 'DetailedSector.html' },
+                        { t: 'Grid Infrastructure', d: 'High-voltage transmission & smart-grid upgrades.', href: 'DetailedSector.html' },
+                        { t: 'Energy Storage', d: 'BESS & pumped-hydro to balance supply.', href: 'DetailedSector.html' }
+                    ]
+                },
+                'OPPORTUNITIES': {
+                    head: 'Investment Opportunities', items: [
+                        { t: 'Renewable Generation', d: 'Solar, wind & off-grid investment projects.', href: 'Opportunities.html' },
+                        { t: 'Grid Infrastructure', d: 'Transmission & distribution tenders.', href: 'Opportunities.html' },
+                        { t: 'Energy Storage', d: 'Battery & storage deployment projects.', href: 'Opportunities.html' },
+                        { t: 'Browse all opportunities', d: 'View every open opportunity.', href: 'Opportunities.html' }
+                    ]
+                },
+                'REGULATIONS': {
+                    head: 'Regulations & Compliance', items: [
+                        { t: 'Legislation & Acts', d: 'Electricity Act, PIA & core energy laws.', href: 'Regulation.html' },
+                        { t: 'Technical Guidelines', d: 'Licensing & mini-grid rules.', href: 'Regulation.html' },
+                        { t: 'Tax & Fiscal Policy', d: 'Incentives & pioneer status.', href: 'Regulation.html' },
+                        { t: 'Regulatory Bodies', d: 'NERC, REA, NIPC & more.', href: 'Regulation.html' }
+                    ]
+                },
+                'DATA': {
+                    head: 'Data & Insights', items: [
+                        { t: 'Investment & Capacity', d: 'Live metrics across energy sectors.', href: 'Data.html' },
+                        { t: 'State-wise Performance', d: 'Project, capacity & growth by state.', href: 'Data.html' },
+                        { t: 'Open Data Downloads', d: 'CSV, XLSX & API datasets.', href: 'Data.html' }
+                    ]
+                },
+                'NEWS': {
+                    head: 'News Categories', items: [
+                        { t: 'Policy & Legislation', d: 'Regulatory and policy developments.', href: 'News.html' },
+                        { t: 'Power & Energy', d: 'Generation, supply & market news.', href: 'News.html' },
+                        { t: 'Renewables', d: 'Solar, wind & clean-energy coverage.', href: 'News.html' },
+                        { t: 'Oil & Gas', d: 'Upstream and downstream updates.', href: 'News.html' },
+                        { t: 'Infrastructure', d: 'Projects, grids & facilities.', href: 'News.html' }
+                    ]
+                }
             };
             document.querySelectorAll('nav.bg-white a').forEach(function (a) {
                 if ((a.className || '').indexOf('px-5') === -1) return;            // desktop top-level links only
