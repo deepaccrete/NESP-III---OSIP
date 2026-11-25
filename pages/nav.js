@@ -17,6 +17,23 @@
     if (src) base = src.slice(0, src.lastIndexOf('/') + 1); // -> ".../pages/"
   } catch (e) { /* keep fallback */ }
 
+  // ---- Tawk.to live chat widget (site-wide, single source) ---------------
+  // Loaded from here so every page that pulls in nav.js gets the chat widget
+  // without duplicating the snippet. Guarded so it initialises only once even
+  // if nav.js is somehow included twice.
+  if (!window.Tawk_API) {
+    window.Tawk_API = window.Tawk_API || {};
+    window.Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement('script'), s0 = document.getElementsByTagName('script')[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/6b06f2ac7a11e467e28eb1ea/1k89i7sqk';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  }
+
   var HOME = base + '../homepage.html';
   var url = {
     sectors: base + 'Sector.html',
